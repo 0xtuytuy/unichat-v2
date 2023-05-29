@@ -9,11 +9,11 @@ logging.basicConfig(level=logging.DEBUG,
 
 
 def main():
-    token = sys.argv[1]
-    channel = sys.argv[2]
-    googleApikey = sys.argv[3]
+    token = 'PvNau6RLaFHtvKSCrAeaOPTb' #sys.argv[1]
+    channel = 'wechat-dev' #sys.argv[2]
+    #googleApikey = sys.argv[3]
     try:
-        bot = Bot(token, channel, googleApikey)
+        bot = Bot(token, channel) #googleApikey
         print("Starting bot...")
         bot.bot_main()
     except KeyboardInterrupt:

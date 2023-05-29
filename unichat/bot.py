@@ -8,7 +8,7 @@ from contextlib import contextmanager
 
 from itchat.client import client as WeChatClient
 from emoji import EmojiHandler
-from translator import Translator
+#from translator import Translator
 from slack import UniChatSlackClient
 
 @contextmanager
@@ -18,12 +18,12 @@ def tmp_file(name_suffix):
     temp_file.close
 
 class Bot(object):
-    def __init__(self, token, channelName, googleApikey):
+    def __init__(self, token, channelName): #googleApikey
         self.channelName = channelName
         self.slackClient = UniChatSlackClient(token)
         self.wechatGroup = None
         self.wechatClient = WeChatClient()
-        self.translator = Translator(googleApikey)
+        #self.translator = Translator(googleApikey)
         self.emojiHandler = EmojiHandler()
         self.media_types = set(['Picture', 'Recording', 'Video', 'Attachment'])
         self.enableTranslator = False
